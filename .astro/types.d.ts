@@ -156,6 +156,13 @@ declare module 'astro:content' {
   collection: "posts";
   data: any
 } & { render(): Render[".md"] };
+"simple-blog-with-tina.md": {
+	id: "simple-blog-with-tina.md";
+  slug: "simple-blog-with-tina";
+  body: string;
+  collection: "posts";
+  data: any
+} & { render(): Render[".md"] };
 };
 
 	};
