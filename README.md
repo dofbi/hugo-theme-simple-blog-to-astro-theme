@@ -23,14 +23,20 @@ This theme is built upon a theme called [simple-blog](https://github.com/10mohi6
 
 ## 🧞 Commands
 
+This project uses PNPM. To install it, run:
+
+```sh
+npm i -g pnpm
+```
+
 All commands are run from the root of the project, from a terminal:
 
-| Command           | Action                                       |
-|:----------------  |:-------------------------------------------- |
-| `npm install`     | Installs dependencies                        |
-| `npm run dev`     | Starts local dev server at `localhost:3000`  |
-| `npm run build`   | Build your production site to `./dist/`      |
-| `npm run preview` | Preview your build locally, before deploying |
+| Command            | Action                                       |
+| :----------------- | :------------------------------------------- |
+| `pnpm install`     | Installs dependencies                        |
+| `pnpm run dev`     | Starts local dev server at `localhost:3000`  |
+| `pnpm run build`   | Build your production site to `./dist/`      |
+| `pnpm run preview` | Preview your build locally, before deploying |
 
 ## 👀 Want to learn more?
 
@@ -47,7 +53,7 @@ Feel free to check [our documentation](https://github.com/withastro/astro) or ju
     "description": "<your site description>",
     "copyright": "© 2024 copyright text."
   },
-  "memus":[
+  "memus": [
     {
       "identifier": "about",
       "name": "About",
