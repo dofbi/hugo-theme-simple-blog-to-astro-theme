@@ -12,7 +12,7 @@
   "devDependencies": {
     "@tinacms/cli": "^1.5.53",
     "@types/node": "^22.2.0",
-    "astro": "^4.5.16"
+    "astro": "^4.13.3"
   },
   "dependencies": {
     "tinacms": "^2.1.1"
