@@ -1,7 +1,8 @@
 import { defineConfig } from "tinacms";
 
 // Your hosting provider likely exposes this as an environment variable
-const branch = import.meta.env.GITHUB_BRANCH || import.meta.env.HEAD || "main";
+// const branch = import.meta.env.GITHUB_BRANCH || import.meta.env.HEAD || "main";
+const branch = "main";
 
 function slugify(input: string): string {
   return String(input)
@@ -54,6 +55,9 @@ export default defineConfig({
             slugify: (values) => {
               return slugify(values.title);
             },
+          },
+          router: ({ collection, document }) => {
+            return `/${collection.name}s/${document._sys.filename}`;
           },
         },
         fields: [

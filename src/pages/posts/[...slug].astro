@@ -33,5 +33,5 @@ const {tinaProps} = Astro.props;
 
 
 <Layout title={tinaProps.data.post.title}>
-  <PostLayout tinaProps={tinaProps} />
+  <PostLayout client:tina tinaProps={tinaProps} />
 </Layout>
