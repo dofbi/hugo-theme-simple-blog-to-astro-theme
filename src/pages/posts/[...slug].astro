@@ -1,4 +1,5 @@
 ---
+import Layout from "@layouts/index.astro";
 import PostLayout from "@layouts/PostLayout.tsx";
 
 import client from "tina/__generated__/client";
@@ -30,4 +31,7 @@ export async function getStaticPaths() {
 const {tinaProps} = Astro.props;
 ---
 
-<PostLayout tinaProps={tinaProps} />
+
+<Layout title={tinaProps.data.post.title}>
+  <PostLayout tinaProps={tinaProps} />
+</Layout>
