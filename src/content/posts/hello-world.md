@@ -1,10 +1,14 @@
 ---
-title: Hello, World!
-date: 2024-08-13:20:08Z
-slug: "hello-world"
-description: "Hello world, from Tina!"
-categories: ["tina"]
-tags: ["markdown", "git", "headless cms"]
+slug: hello-world
+title: 'Hello, World!'
+description: 'Hello world, from Tina!'
+date: 2024-08-12T17:00:00.000Z
+categories:
+  - tina
+tags:
+  - markdown
+  - git
+  - headless cms
 ---
 
 ## Hello World!

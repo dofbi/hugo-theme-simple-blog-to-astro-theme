@@ -7,6 +7,18 @@ const branch =
   process.env.HEAD ||
   "main";
 
+function slugify(input: string): string {
+  return String(input)
+    .trim()
+    .toLowerCase()
+    .normalize("NFKD") // split accented characters into their base characters and diacritical marks
+    .replace(/[\u0300-\u036f]/g, "") // remove all the accents, which happen to be all in the \u03xx UNICODE block.
+    .replace(/[^\w\s-]/g, "") // Remove special characters
+    .split(" ", 8) // limit to 8 words, in normal cases
+    .join("-")
+    .replace(/[\s-]+/g, "-"); // replace multiple spaces or hyphens with a single hyphen
+}
+
 export default defineConfig({
   branch,
 
@@ -32,6 +44,22 @@ export default defineConfig({
         name: "post",
         label: "Posts",
         path: "src/content/posts",
+        defaultItem: () => {
+          const title = "Brand New Post";
+          return {
+            title,
+            description: "So brand new in fact, it hasn't been edited yet",
+            slug: slugify(title),
+            date: new Date().toISOString(),
+          };
+        },
+        ui: {
+          filename: {
+            slugify: (values) => {
+              return slugify(values.title);
+            },
+          },
+        },
         fields: [
           {
             type: "string",
@@ -39,6 +67,33 @@ export default defineConfig({
             label: "Title",
             isTitle: true,
             required: true,
+          },
+          {
+            type: "string",
+            name: "slug",
+            label: "Slug",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "description",
+            label: "Description",
+          },
+          {
+            type: "datetime",
+            name: "date",
+            label: "date",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "categories",
+            list: true,
+          },
+          {
+            type: "string",
+            name: "tags",
+            list: true,
           },
           {
             type: "rich-text",
