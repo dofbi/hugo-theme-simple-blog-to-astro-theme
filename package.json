@@ -4,12 +4,17 @@
   "private": true,
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "dev": "astro dev",
+    "dev": "npx tinacms dev -c \"astro dev\"",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview"
   },
   "devDependencies": {
+    "@tinacms/cli": "^1.5.53",
+    "@types/node": "^22.2.0",
     "astro": "^4.5.16"
+  },
+  "dependencies": {
+    "tinacms": "^2.1.1"
   }
 }
