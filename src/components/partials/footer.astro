@@ -11,11 +11,8 @@ import config from "@config/config.json";
     <div class="col-4 col-md-2 mb-4">
       <h2 class="h5 mb-3">Menu</h2>
       <ul class="nav flex-column">
-        <li class="mb-1">
-          <a href={config.site.baseUrl} class="text-secondary">Home</a>
-        </li>
         {
-          config.memus.map((menu) => (
+          config.links.map((menu) => (
             <li class="mb-1">
               <a href={menu.url} class="text-secondary">
                 {menu.name}

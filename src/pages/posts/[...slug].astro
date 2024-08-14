@@ -1,20 +1,37 @@
 ---
-import config from "@config/config.json";
-import { getContent } from "@lib/contentParser.astro";
-import MarkdownPostLayout from "../../layouts/PostLayout.astro";
+import Layout from "@layouts/index.astro";
+import PostLayout from "@layouts/PostLayout.tsx";
+
+import client from "tina/__generated__/client";
 
 export async function getStaticPaths() {
-  const posts = await getContent(config.settings.blog_folder);
-  const paths = posts.map((entry: any) => ({
-    params: { slug: entry.slug },
-    props: { entry },
-  }));
-  return paths;
+  const postsResponse = await client.queries.postConnection()
+  const postsFromTina = postsResponse.data.postConnection.edges!.map(post => {
+    return {
+      params: {
+        relativePath: post!.node!._sys.relativePath
+      }
+    }
+  })
+
+  const postsPages = await Promise.all(
+    postsFromTina.map(async ({params}) => {
+      return await client.queries.post({relativePath: params.relativePath})
+    })
+  )
+
+  return postsPages.map((post) => {
+    return {
+      params: {slug:post.data.post._sys.filename},
+      props: { tinaProps: { ...post } }
+    }
+  })
 }
-const { entry } = Astro.props;
-const { Content } = await entry.render();
+
+const {tinaProps} = Astro.props;
 ---
 
-<MarkdownPostLayout frontmatter={entry}>
-  <Content />
-</MarkdownPostLayout>
+
+<Layout title={tinaProps.data.post.title}>
+  <PostLayout client:tina tinaProps={tinaProps} />
+</Layout>
