@@ -1,25 +1,31 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/13421fcf-e03c-4f6a-9ad1-1aa1ec13e0ba/deploy-status)](https://app.netlify.com/sites/astro-simple-blog/deploys) [![Run Build](https://github.com/dofbi/astro-simple-blog-theme/actions/workflows/build-test.yml/badge.svg)](https://github.com/dofbi/astro-simple-blog-theme/actions/workflows/build-test.yml)
 
-# Astro Simple blog theme
+# Astro Simple blog theme + Tina CMS
 
-simple blog is a simple blog theme for [Astro](https://docs.astro.build).
+This is the simple blogsimple blog theme for [Astro](https://docs.astro.build)
+extended with Tina CMS.
 
 ![screenshot](https://raw.githubusercontent.com/10mohi6/hugo-theme-simple-blog/master/images/screenshot.png)
 
-## Demo
+## Live editing demo
 
-[View Creek on Netlify](https://astro-simple-blog.netlify.app/)
+![Live editing demo](/public/assets/simple-blog-with-tina.mp4)
 
 ## Credits
 
-This theme is built upon a theme called [simple-blog](https://github.com/10mohi6/hugo-theme-simple-blog) for [hugo](https://gohugo.io/). Full design credit goes to [10mohi6](https://github.com/10mohi6).
+This is built upon [the simple blog theme for Astro](https://github.com/dofbi/astro-simple-blog-theme).
+Many thanks to @dofbi! If this template helped you, buy him a coffee.
+
+<a href="https://www.buymeacoffee.com/51JrBtX" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
 ## Features
 
 - content
-- pagination
+- pagination (improved)
 - tags
 - categories
+- content management with Tina
+- live editing with Tina
 
 ## 🧞 Commands
 
@@ -47,13 +53,12 @@ Feel free to check [our documentation](https://github.com/withastro/astro) or ju
 ```json
 {
   "site": {
-    "baseUrl": "/",
     "language": "en",
     "title": "Astro Themes",
     "description": "<your site description>",
     "copyright": "© 2024 copyright text."
   },
-  "memus": [
+  "links": [
     {
       "identifier": "about",
       "name": "About",
@@ -66,12 +71,6 @@ Feel free to check [our documentation](https://github.com/withastro/astro) or ju
   }
 }
 ```
-
-## Support
-
-If this template helped you, buy me a coffee.
-
-<a href="https://www.buymeacoffee.com/51JrBtX" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
 ## License
 
